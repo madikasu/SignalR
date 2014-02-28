@@ -48,7 +48,7 @@ namespace Microsoft.AspNet.SignalR.Client.Infrastructure
                 throw new ArgumentNullException("connection");
             }
 
-            // save the connection.ConnectionToken since race issue that connection.ConnectionToken can be set to null in different thread
+            // Save the connection.ConnectionToken since race issue that connection.ConnectionToken can be set to null in different thread
             var connectionToken = connection.ConnectionToken;
 
             if (connectionToken == null)
