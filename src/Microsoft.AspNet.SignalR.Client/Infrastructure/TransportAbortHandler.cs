@@ -48,6 +48,12 @@ namespace Microsoft.AspNet.SignalR.Client.Infrastructure
                 throw new ArgumentNullException("connection");
             }
 
+            if (connection.ConnectionToken == null)
+            {
+                connection.Trace(TraceLevels.Messages, "ConnectionToken is deleted");
+                return;
+            }
+
             // Abort should never complete before any of its previous calls
             lock (_abortLock)
             {
